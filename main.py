@@ -61,7 +61,7 @@ def start(m):
         bot.send_message(m.chat.id, "Твои задачи на день", reply_markup=markup)
         #bot.register_next_step_handler(mesg, taskforday())
 
-# call не доработан еще
+# эта часть call не доработана
 @bot.callback_query_handler(func=lambda call: True)
 def callback_inline(call):
     #if call.data == call_task[0]:
@@ -83,23 +83,7 @@ def callback_inline(call):
             else:
                 break
 
-        #if call.data == "l":
-        #   bot.send_message(call.message.chat.id, "Что хочешь")
-        #  print(call.message.message_id)
-        # print(call.inline_message_id)
-        #bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, inline_message_id=call.inline_message_id, text="Пыщь")
-        #connection_obj.commit()
-        # Close the connection
-        #connection_obj.close()
-        #cursor.execute(sql_delete_query)
-        #sqlite_connection.commit()
-        #print("Запись успешно удалена")
-        #cursor.close()
-        #bot.send_message(call.message.chat.id, text=str(new4))
-   # else:
-    #    break
-
-
+#добавление задачи в базу данных
 def do_task(m):
     bot.send_message(m.chat.id, 'Задача добавлена')
     # в базу данных попадает юзернейм и задача
